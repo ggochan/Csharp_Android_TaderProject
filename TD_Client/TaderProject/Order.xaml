@@ -1,0 +1,212 @@
+﻿<Window x:Class="TaderProject.Order"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaderProject"
+        mc:Ignorable="d"
+        Height="525" Width="370" Icon="Resources/tdicon_white.png" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Window.Resources>
+        <Style x:Key="BlueButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource BasedButtonStyle}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border 
+                         x:Name="Border"  
+                         CornerRadius="2" 
+                         BorderThickness="1"
+                         Background="#355ea9"
+                         BorderBrush="Transparent">
+                            <ContentPresenter 
+                         Margin="2"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         RecognizesAccessKey="True"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="WhiteButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource BasedButtonStyle2}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border 
+                         x:Name="Border"  
+                         CornerRadius="2" 
+                         BorderThickness="1"
+                         Background="White"
+                         BorderBrush="Transparent">
+                            <ContentPresenter 
+                         Margin="2"
+                         HorizontalAlignment="Center"
+                         VerticalAlignment="Center"
+                         RecognizesAccessKey="True"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="ComboBoxItem">
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <!-- 타이틀바에 해당하는 공간 -->
+        <Grid Grid.Row="0" Grid.ColumnSpan="2">
+            <Canvas HorizontalAlignment="Left" Height="30" Margin="5,5,0,0" VerticalAlignment="Top" Width="30"
+                    MouseLeftButtonDown="Rectangle_MouseDown">
+                <Image Source="Resources/tdicon_white.png"/>
+            </Canvas>
+            <Rectangle MouseLeftButtonDown="Rectangle_MouseDown" 
+                      Fill="White" Margin="35,0,80,0" />
+            <DockPanel HorizontalAlignment="Right">
+                <Button IsTabStop="false" x:Name="ToMiniButton" 
+                        Click="ToMiniButton_Click"
+                        Width="40"
+                        Content="ㅡ"
+                        Height="30" Command="{Binding ButtonCmd}" Style="{StaticResource WhiteButtonStyle}" FontWeight="Bold"/>
+                <Button IsTabStop="false" x:Name="CloseButton" 
+                        Click="CloseButton_Click"
+                        Width="40"
+                        Content="X"
+                        Height="30" Command="{Binding ButtonCmd}" Style="{StaticResource WhiteButtonStyle}" FontWeight="Bold"/>
+            </DockPanel>
+        </Grid>
+        <Border BorderBrush="#355ea9" BorderThickness="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="525" VerticalAlignment="Top" Width="370" Grid.RowSpan="2"/>
+        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="172*"/>
+                <ColumnDefinition Width="6*"/>
+                <ColumnDefinition Width="7*"/>
+            </Grid.ColumnDefinitions>
+            <Label FontSize="10" FontWeight="Bold" Content="※ 입력 후 Enter를 치면 검색이 됩니다." HorizontalAlignment="Left" Height="27" Margin="30,28,0,0" VerticalAlignment="Top" Width="231"/>
+            <Label FontSize="10" FontWeight="Bold" Content="전체" HorizontalAlignment="Left" Height="27" Margin="317,28,0,0" VerticalAlignment="Top" Width="32" Grid.ColumnSpan="2"/>
+            <Button x:Name="TakeOrderbtn" Content="주문" Click="OrderClearbtn" HorizontalAlignment="Left" Margin="54,394,0,0" VerticalAlignment="Top" Width="265" Height="40" Command="{Binding ButtonCmd}" Style="{StaticResource BlueButtonStyle}" FontWeight="Bold" />
+            <TextBox TabIndex="1" x:Name ="FoodKindTB"  Text="{Binding Path= ComboKind,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="22" Margin="31,54,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="216" KeyDown="FoodKindTB_KeyDown">
+                <TextBox.Style>
+                    <Style  xmlns:sys="clr-namespace:System;assembly=mscorlib" TargetType="{x:Type TextBox}">
+                        <Style.Resources>
+                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                <VisualBrush.Visual>
+                                    <Label Content="음식 종류(직접입력)" Foreground="LightGray" />
+                                    <!--Hint 명-->
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Style.Resources>
+                        <Style.Triggers>
+                            <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="Text" Value="{x:Null}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="Background" Value="White" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <TextBox GotFocus="StoreGetFocus" KeyDown="StoreNameTB_KeyDown" TabIndex="2" x:Name ="StoreNameTB" HorizontalAlignment="Left" Height="22" Margin="31,108,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="216" >
+                <TextBox.Style>
+                    <Style  xmlns:sys="clr-namespace:System;assembly=mscorlib" TargetType="{x:Type TextBox}">
+                        <Style.Resources>
+                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                <VisualBrush.Visual>
+                                    <Label Content="가게명(직접입력)" Foreground="LightGray" />
+                                    <!--Hint 명-->
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Style.Resources>
+                        <Style.Triggers>
+                            <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="Text" Value="{x:Null}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="Background" Value="White" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <TextBox TabIndex="3" x:Name ="OrderMenuTB" GotFocus="MenuGetFocus" KeyDown="OrderMenuTB_KeyDown" HorizontalAlignment="Left" Height="22" Margin="30,162,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="217">
+                <TextBox.Style>
+                    <Style  xmlns:sys="clr-namespace:System;assembly=mscorlib" TargetType="{x:Type TextBox}">
+                        <Style.Resources>
+                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                <VisualBrush.Visual>
+                                    <Label Content="주문자 메뉴(직접입력)" Foreground="LightGray" />
+                                    <!--Hint 명-->
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Style.Resources>
+                        <Style.Triggers>
+                            <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="Text" Value="{x:Null}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="Background" Value="White" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <TextBox TabIndex="4" x:Name ="OptionTB" GotFocus="OptionGetFocus" KeyDown="OptionTB_KeyDown" HorizontalAlignment="Left" Height="22" Margin="30,216,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="217">
+                <TextBox.Style>
+                    <Style  xmlns:sys="clr-namespace:System;assembly=mscorlib" TargetType="{x:Type TextBox}">
+                        <Style.Resources>
+                            <VisualBrush x:Key="CueBannerBrush" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                                <VisualBrush.Visual>
+                                    <Label Content="옵션(직접입력)" Foreground="LightGray" />
+                                    <!--Hint 명-->
+                                </VisualBrush.Visual>
+                            </VisualBrush>
+                        </Style.Resources>
+                        <Style.Triggers>
+                            <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="Text" Value="{x:Null}">
+                                <Setter Property="Background" Value="{StaticResource CueBannerBrush}" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="True">
+                                <Setter Property="Background" Value="White" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <ComboBox IsTabStop="false" IsEditable="false" DropDownClosed="FoodKindCB_DropDownClosed" DropDownOpened="FoodKindCB_DropDownOpened" x:Name="FoodKindCB" DisplayMemberPath="ComboKind" Height="22" Margin="246,54,9,0" VerticalAlignment="Top" RenderTransformOrigin="0.142,0.867" Background="#355ea9" Grid.ColumnSpan="2" SelectionChanged="FoodKindCB_SelectionChanged" >
+
+            </ComboBox>
+            <ComboBox IsTabStop="false" x:Name="StoreNameCB" DropDownClosed="StoreNameCB_DropDownClosed" DropDownOpened="StoreNameCB_DropDownOpened" DisplayMemberPath="ComboStore" Height="22" Margin="246,108,9,0" VerticalAlignment="Top" RenderTransformOrigin="0.142,0.867" IsEditable="false" Grid.ColumnSpan="2" SelectionChanged="StoreNameCB_SelectionChanged"/>
+
+            <ComboBox IsTabStop="false" x:Name="OderMenuCB" DropDownClosed="OderMenuCB_DropDownClosed" DropDownOpened="OderMenuCB_DropDownOpened" DisplayMemberPath="MenuCombo" Height="22" Margin="246,162,9,0" VerticalAlignment="Top" RenderTransformOrigin="0.142,0.867" IsEditable="false" Grid.ColumnSpan="2" SelectionChanged="OderMenuCB_SelectionChanged" />
+            <ComboBox IsTabStop="false" x:Name="OptionCB" DropDownClosed="OptionCB_DropDownClosed" DropDownOpened="OptionCB_DropDownOpened" DisplayMemberPath="OptionCombo" Height="22" Margin="246,216,9,0" VerticalAlignment="Top" RenderTransformOrigin="0.142,0.867" IsEditable="false" Grid.ColumnSpan="2" SelectionChanged="OptionCB_SelectionChanged" />
+            <ComboBox TabIndex="5" x:Name="UserCountCB" DropDownOpened="UserCountCB_DropDownOpened" Height="22" Margin="287,271,9.412,0" VerticalAlignment="Top" RenderTransformOrigin="0.142,0.867" IsEditable="false" Grid.ColumnSpan="2" />
+            <Label FontSize="10" FontWeight="Bold" Content="인원수" HorizontalAlignment="Left" Height="27" Margin="245,270,0,0" VerticalAlignment="Top" Width="44"/>
+
+        </Grid>
+    </Grid>
+</Window>

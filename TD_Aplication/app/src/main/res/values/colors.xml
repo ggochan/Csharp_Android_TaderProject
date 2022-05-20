@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2c59a6 </color>
+    <color name="colorPrimaryop">#802c59a6 </color>
+    <color name="colorPrimaryDark">#2c59a6</color>
+    <color name="colorPrimaryOrenge">#e46612</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack11">#111111</color>
+    <color name="colorBlack33">#333333</color>
+    <color name="colorBlack55">#555555</color>
+    <color name="colorAccent">#2c59a6</color> <!--기본제공색-->
+    <color name="colorGrayoff">#808080</color>
+</resources>

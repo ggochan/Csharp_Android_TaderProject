@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "kJFFOaWF9EtirTUlOM/whE5fZ6Sw3SR97q97e0Lv9DGvsRk/yVVozHpAVsCi+zOojVFwFY6VGgpzMx9vHd5Uwg==",
+  "success": true,
+  "projectFilePath": "F:\\01_song_end_project\\TaderServer\\TaderServer\\TaderServer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\LG\\.nuget\\packages\\oracle.manageddataaccess.core\\2.19.91\\oracle.manageddataaccess.core.2.19.91.nupkg.sha512"
+  ],
+  "logs": []
+}

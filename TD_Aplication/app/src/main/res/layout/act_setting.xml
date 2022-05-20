@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            style="@style/primary_toolbar"
+            android:id="@+id/setting_app_toolbar">
+
+            <ImageView
+                style="@style/toolbar_back_btn"
+                android:id="@+id/setting_back_arrow"
+                />
+        <View
+            android:layout_width="15dp"
+            android:layout_height="match_parent"
+            android:id="@+id/setting_view"
+            />
+            <TextView
+                style="@style/toolbar_text"
+                android:id="@+id/setting_title"
+                android:text="설정"
+                />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            >
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+        </android.support.v7.widget.Toolbar>
+    <LinearLayout
+        style="@style/setting_upper_textline_box"
+        android:layout_weight="12">
+        <LinearLayout style="@style/default_match_wrap_Layout"
+            >
+            <TextView
+                style="@style/setting_upper_text"
+                android:layout_gravity="center_vertical"
+                android:text="닉네임 설정" />
+            <EditText
+                android:id="@+id/setting_name_edit"
+                style="@style/font_15_black"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:enabled="false"
+                android:layout_gravity="bottom"
+                android:gravity="right"
+                />
+            <Button
+                android:id="@+id/setting_idcheck_btn"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_gravity="center_vertical"
+                android:text="ID변경"
+                android:textSize="11dp"
+                android:enabled="true"
+                style="@style/font_13_white"
+                android:background="@drawable/round_box_pri"
+                />
+        </LinearLayout>
+        <LinearLayout style="@style/setting_match_wrap_Layout">
+            <TextView
+                style="@style/setting_upper_text"
+                android:layout_gravity="center_vertical"
+                android:text="서버 IP 설정" />
+            <EditText
+                android:id="@+id/setting_ip_edit"
+                style="@style/font_15_black"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:hint="예)000.00.0.00:5656"
+                android:layout_gravity="bottom"
+                android:maxLength="30"
+                android:maxLines="1"
+                android:gravity="right"
+                />
+        </LinearLayout>
+        <!--<LinearLayout style="@style/setting_match_wrap_Layout">
+            <TextView
+                style="@style/setting_upper_text"
+                android:text="알림 설정" />
+            <Switch
+                android:id="@+id/bar_switch"
+                style="@style/setting_upper_switch_btn" />
+        </LinearLayout>
+        <LinearLayout style="@style/setting_match_wrap_Layout"
+            android:layout_marginTop="35dp">
+            <TextView
+                style="@style/setting_upper_text"
+                android:text="도움말" />
+        </LinearLayout>-->
+    </LinearLayout>
+    <LinearLayout
+        style="@style/setting_under_textline_box"
+        android:layout_weight="6"></LinearLayout>
+</LinearLayout>

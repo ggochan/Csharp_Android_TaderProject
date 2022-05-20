@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/primary_toolbar"
+        android:id="@+id/ordering_app_toolbar">
+
+        <ImageView
+            style="@style/toolbar_back_btn"
+            android:id="@+id/ordering_back_arrow"
+            />
+        <View
+            android:layout_width="15dp"
+            android:layout_height="match_parent"
+            android:id="@+id/ordering_view"
+            />
+        <TextView
+            style="@style/toolbar_text"
+            android:id="@+id/ordering_title"
+            android:text="주문하기"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            >
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <TextView
+                style="@style/toolbar_text"
+                android:id="@+id/ordering_update"
+                android:text="주문수정"
+                android:layout_marginRight="15dp"
+                android:visibility="invisible"
+                />
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="70dp"
+            android:paddingRight="70dp"
+            android:paddingTop="35dp"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/ordering_upper_text"
+                    android:textColor="@color/colorPrimary"
+                    android:text="음식 종류 :"/>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+                <TextView
+                    style="@style/ordering_upper_text"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="right"
+                    android:id="@+id/ordering_kind"
+                    />
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/colorPrimary"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/ordering_upper_text"
+                    android:textColor="@color/colorPrimary"
+                    android:text="가게명 :"/>
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+                <TextView
+                    android:id="@+id/ordering_store"
+                    style="@style/ordering_upper_text"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_gravity="right"
+                    />
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="3dp"
+                android:background="@color/colorPrimary"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="10">
+            <LinearLayout
+                android:id = "@+id/relativeLayout1"
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:background = "@color/colorPrimary" >
+                <TextView
+                    android:layout_width = "0dp"
+                    android:layout_height = "wrap_content"
+                    android:layout_weight = "0.5"
+                    android:gravity = "center"
+                    android:padding ="5dp"
+                    android:text = "번호"
+                    style="@style/font_15_white" />
+
+                <TextView
+                    android:layout_width = "0dp"
+                    android:layout_height = "wrap_content"
+                    android:layout_weight = "1.5"
+                    android:gravity = "center"
+                    android:padding = "5dp"
+                    android:text = "메뉴"
+                    style="@style/font_15_white" />
+
+                <TextView
+                    android:layout_width = "0dp"
+                    android:layout_height = "wrap_content"
+                    android:layout_weight = "0.5"
+                    android:gravity = "center"
+                    android:padding = "5dp"
+                    android:text = "수량"
+                    style="@style/font_15_white" />
+
+                <TextView
+                    android:layout_width = "0dp"
+                    android:layout_height = "wrap_content"
+                    android:layout_weight = "0.5"
+                    android:gravity = "center"
+                    android:padding = "5dp"
+                    android:text = "추가"
+                    style="@style/font_15_white" />
+            </LinearLayout>
+
+            <ListView
+                android:id = "@+id/ordering_listview"
+                android:layout_width = "match_parent"
+                android:layout_height = "wrap_content"
+                android:divider = "@null"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <FrameLayout
+                style="@style/default_match_Layout"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:paddingRight="15dp">
+                <android.support.design.widget.FloatingActionButton
+                    android:id="@+id/schedule_fab_btn"
+                    style="@style/fab_btn"
+                    app:borderWidth="0dp"
+                    app:fabSize="normal"></android.support.design.widget.FloatingActionButton>
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

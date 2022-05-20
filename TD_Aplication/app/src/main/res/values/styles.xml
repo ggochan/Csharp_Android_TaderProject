@@ -1,0 +1,165 @@
+<resources>
+
+    <!-- Spinner style -->
+    <style name="CustomSpinnerTheme">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="CustomSpinnerTheme_Int">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <!-- NoActionBar -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <!--중앙 세팅-->
+    <style name="vertical_match_LinearLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="vertical_wrap_LinearLayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!--중앙 세팅-->
+     <!--툴바-->
+      <!--기본 툴바-->
+    <style name="primary_toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+      <!--//기본 툴바-->
+
+        <!--뒤로가기 버튼-->
+    <style name="toolbar_back_btn">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/ba_backarrow</item>
+        <item name="android:layout_marginLeft">@dimen/primary_toolbar_btn_margin</item>
+    </style>
+        <!--//뒤로가기 버튼-->
+        <!--td icon-->
+        <style name="toolbar_tdicon">
+            <item name="android:layout_width">60dp</item>
+            <item name="android:layout_height">match_parent</item>
+            <item name="android:background">@drawable/tdiconbackblue</item>
+        </style>
+        <!--//td icon-->
+        <!--설정 icon-->
+        <style name="toolbar_setting">
+            <item name="android:layout_width">60dp</item>
+            <item name="android:layout_height">40dp</item>
+        </style>
+        <!--//설정 icon-->
+        <!--툴바 텍스트-->
+    <style name="toolbar_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+        <!--//툴바 텍스트-->
+    <!--//툴바-->
+    <style name="default_match_wrap_Layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="default_wrap_match_Layout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="default_match_Layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="default_wrap_Layout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="vertical_match_wrap_LinearLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="vertical_wrap_match_LinearLayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="horizontal_match_wrap_LinearLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="horizontal_wrap_match_Layout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="horizontal_match_Layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="horizontal_wrap_Layout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!--설정 상단 레이아웃-->
+    <style name="setting_upper_textline_box">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingLeft">35dp</item>
+        <item name="android:paddingRight">35dp</item>
+    </style>
+    <!--//설정 상단 레이아웃-->
+    <!--설정 하단 레이아웃-->
+    <style name="setting_under_textline_box">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">top</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:paddingRight">20dp</item>
+    </style>
+    <!--//설정 하단 레이아웃-->
+    <!--상단 스위치-->
+    <style name="setting_upper_switch_btn">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:track">@drawable/switch_track_selector</item>
+        <item name="android:thumb">@drawable/switch_thumb</item>
+    </style>
+    <style name="setting_upper_switch_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+    <!--//상단 스위치-->
+    <!--글 사이 행간격-->
+    <style name="setting_match_wrap_Layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">29dp</item>
+    </style>
+    <!--//글 사이 행간격-->
+</resources>
