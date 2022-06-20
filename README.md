@@ -5,7 +5,6 @@ Tader는 어떤 그룹안에서 식사, 음료 등을 주문을 하려고 할 �
 <br><br>
 전체 구성으로 C# Rest ful을 이용하여 구축한 Server, C# WPF를 통해 구축한 Client와 Android APP으로 구성
 
----
 <strong>Server
 - Rest ful API
 - Oracle DB
