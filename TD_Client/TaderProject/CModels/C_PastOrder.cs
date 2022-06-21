@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// 과거 내역 정보 Models
 namespace TaderProject.CModels
 {
     class C_PastOrder

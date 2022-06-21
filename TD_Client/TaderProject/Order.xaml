@@ -204,7 +204,7 @@
 
             <ComboBox IsTabStop="false" x:Name="OderMenuCB" DropDownClosed="OderMenuCB_DropDownClosed" DropDownOpened="OderMenuCB_DropDownOpened" DisplayMemberPath="MenuCombo" Height="22" Margin="246,162,9,0" VerticalAlignment="Top" RenderTransformOrigin="0.142,0.867" IsEditable="false" Grid.ColumnSpan="2" SelectionChanged="OderMenuCB_SelectionChanged" />
             <ComboBox IsTabStop="false" x:Name="OptionCB" DropDownClosed="OptionCB_DropDownClosed" DropDownOpened="OptionCB_DropDownOpened" DisplayMemberPath="OptionCombo" Height="22" Margin="246,216,9,0" VerticalAlignment="Top" RenderTransformOrigin="0.142,0.867" IsEditable="false" Grid.ColumnSpan="2" SelectionChanged="OptionCB_SelectionChanged" />
-            <ComboBox TabIndex="5" x:Name="UserCountCB" DropDownOpened="UserCountCB_DropDownOpened" Height="22" Margin="287,271,9.412,0" VerticalAlignment="Top" RenderTransformOrigin="0.142,0.867" IsEditable="false" Grid.ColumnSpan="2" />
+            <ComboBox TabIndex="5" x:Name="UserCountCB" Height="22" Margin="287,271,9.412,0" VerticalAlignment="Top" RenderTransformOrigin="0.142,0.867" IsEditable="false" Grid.ColumnSpan="2" />
             <Label FontSize="10" FontWeight="Bold" Content="인원수" HorizontalAlignment="Left" Height="27" Margin="245,270,0,0" VerticalAlignment="Top" Width="44"/>
 
         </Grid>

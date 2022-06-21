@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-F:\project\TD_Client\TaderProject\obj\Debug\
+F:\project\Csharp_Android_TaderProject\TD_Client\TaderProject\obj\Debug\
 TaderProject
 none
 false
 DEBUG;TRACE
-F:\project\TD_Client\TaderProject\App.xaml
+F:\project\Csharp_Android_TaderProject\TD_Client\TaderProject\App.xaml
 81027858011
 
-211051384660
-1738792498
+17-1601877780
+17-975837578
 IPSettingDlg.xaml;Order.xaml;OrderList.xaml;OrderList_MenuAddDlg.xaml;OrderList_OptionAddDlg.xaml;OrderMain.xaml;OrderManagement.xaml;OrderReceipt.xaml;
 
-True
+False
 

@@ -29,7 +29,6 @@ namespace TaderServer
                     options.SuppressModelStateInvalidFilter = true;
                     options.SuppressMapClientErrors = true;
                 });
-            services.AddControllers();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

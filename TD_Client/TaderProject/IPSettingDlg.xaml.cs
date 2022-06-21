@@ -19,9 +19,13 @@ namespace TaderProject
     /// </summary>
     public partial class IPSettingDlg : Window
     {
+
+        //Local File Address
         string strLocalPath = AppDomain.CurrentDomain.BaseDirectory.Substring(0, AppDomain.CurrentDomain.BaseDirectory.LastIndexOf('\\')); //File Address
 
         private int closecheck = 0;
+
+        // File IP 정보 확인 (불러오기/입력)
         public IPSettingDlg(int check)
         {
             InitializeComponent();
@@ -47,17 +51,18 @@ namespace TaderProject
         }
 
         #region 타이틀바 UI 이벤트
+        // Mouse Move
         private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
         }
-
+        // 최소화버튼
         private void ToMiniButton_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = System.Windows.WindowState.Minimized;
         }
 
-
+        // 종료버튼
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             if (closecheck == 0)
@@ -78,6 +83,8 @@ namespace TaderProject
             }
         }
         #endregion
+        
+        // 입력 IP Check
         private void IPSettingBtn_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult msgcheck = MessageBox.Show("서버 IP를 정확히 입력하셨습니까?", "IP 확인", MessageBoxButton.YesNo);

@@ -163,9 +163,7 @@
   <ItemGroup>
     <Resource Include="Resources\tdicon_white.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Temple\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\tdicon.ico" />
   </ItemGroup>

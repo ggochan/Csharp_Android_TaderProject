@@ -1,19 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using TaderProject.CModels;
 
 namespace TaderProject
@@ -31,12 +22,16 @@ namespace TaderProject
         public delegate void OnChildDataInputHandler(int Parameters);
         public event OnChildDataInputHandler OnChildDataInputEvent;
 
-        private bool kindselect = false, storeselect = false, menuselect = false, optionselect = false;
+        // Combox 선택 체크
+        private bool kindselect = false;
+        private bool storeselect = false;
+        private bool menuselect = false;
+        private bool optionselect = false;
+
         public Order(string id,string uristr)
         {
             #region 공용 Window Setting
             InitializeComponent();
-            //TestBox.Text = a;
             #endregion
 
             #region UI Value
@@ -83,7 +78,7 @@ namespace TaderProject
         #endregion
 
         #region 주문 요청 버튼
-        // 주문
+        // 주문하기 전체 초기화
         private void OrderClearbtn(object sender, RoutedEventArgs e)
         {
             if (UserCountCB.Text != "")
@@ -181,7 +176,9 @@ namespace TaderProject
         }
         #endregion
 
-        #region ComboBox setting
+        #region ComboBox Data setting
+        
+        //콤보박스 종류 GET
         private async void GetOrderKindDataAll()
         {
             try
@@ -227,7 +224,6 @@ namespace TaderProject
             }
             catch (Newtonsoft.Json.JsonException jEx)
             {
-                // 이 예외는 요청 본문을 역직렬화 할 때, 문제가 발생했음을 나타냅니다.
                 MessageBox.Show("1오류" + jEx.Message);
             }
             catch (HttpRequestException)
@@ -382,7 +378,6 @@ namespace TaderProject
             }
             catch (Newtonsoft.Json.JsonException jEx)
             {
-                // 이 예외는 요청 본문을 역직렬화 할 때, 문제가 발생했음을 나타냅니다.
                 MessageBox.Show("1오류" + jEx.Message);
             }
             catch (HttpRequestException)
@@ -449,7 +444,7 @@ namespace TaderProject
         }
         #endregion
 
-        #region TB Focus 이벤트
+        #region Text Box Focus 이벤트 제어
         private void StoreGetFocus(object sender, RoutedEventArgs e)
         {
             if (FoodKindTB.Text == "")
@@ -505,9 +500,9 @@ namespace TaderProject
         }
         #endregion
 
-        #region TB KeyDown + (CB DropDown + DropClosed) 이벤트
+        #region Text Box KeyDown + (Combo Box DropDown + DropClosed) 이벤트
 
-        #region 종류
+        #region 종류 이벤트 처리
         private void FoodKindTB_KeyDown(object sender, KeyEventArgs e)
         {
             try
@@ -566,9 +561,9 @@ namespace TaderProject
             else if (FoodKindTB.Text == "")
                 FoodKindTB.Focus();
         }
-        #endregion
+        #endregion 
 
-        #region 가게명
+        #region 가게명 이벤트 처리
         private void StoreNameTB_KeyDown(object sender, KeyEventArgs e)
         {
             try
@@ -624,7 +619,7 @@ namespace TaderProject
         }
         #endregion
 
-        #region 메뉴
+        #region 메뉴 이벤트 처리
         private void OrderMenuTB_KeyDown(object sender, KeyEventArgs e)
         {
             try
@@ -679,7 +674,7 @@ namespace TaderProject
 
         #endregion
 
-        #region 옵션
+        #region 옵션 이벤트 처리
         private void OptionTB_KeyDown(object sender, KeyEventArgs e)
         {
             try
@@ -740,10 +735,6 @@ namespace TaderProject
         }
         #endregion
 
-        private void UserCountCB_DropDownOpened(object sender, EventArgs e)
-        {
-
-        }
         #endregion
     }
 }

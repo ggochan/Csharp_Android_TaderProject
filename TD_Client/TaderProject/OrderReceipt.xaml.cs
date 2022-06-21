@@ -104,6 +104,7 @@ namespace TaderProject
         }
         #endregion
 
+        #region 카카오톡 메시지 처리
         private void KaKaoTalkMessageTrans_btn(object sender, RoutedEventArgs e)
         {
             try{
@@ -135,6 +136,23 @@ namespace TaderProject
             }
 
         }
+        private void sendMsg(string msg, string id)
+        {
+            IntPtr hd01 = FindWindow(null, id);
+            if (hd01 != IntPtr.Zero)
+            {
+                IntPtr hd03 = FindWindowEx(hd01, IntPtr.Zero, "RichEdit50W", "");
+
+                SendMessage(hd03, 0x000c, 0, msg);
+
+                Thread.Sleep(100);
+
+                PostMessage(hd03, 0x0100, 0xD, 0x1C001);
+            }
+        }
+        #endregion
+
+        #region  영수증 데이터 처리
         private async void GetReseiptData()
         {
             try
@@ -152,7 +170,6 @@ namespace TaderProject
             }
             catch (Newtonsoft.Json.JsonException jEx)
             {
-                // 이 예외는 요청 본문을 역직렬화 할 때, 문제가 발생했음을 나타냅니다.
                 MessageBox.Show("1오류" + jEx.Message);
             }
             catch (HttpRequestException)
@@ -160,6 +177,7 @@ namespace TaderProject
                 MessageBox.Show("서버 연결이 되있지 않습니다");
             }
         }
+        // 영수증 편집
         private string Str_return(string[] str)
         {
             string returnstr = "";
@@ -215,23 +233,8 @@ namespace TaderProject
             }
             return returnstr;
         }
-        private void sendMsg(string msg, string id)
 
-        {
-            IntPtr hd01 = FindWindow(null, id);
-            if (hd01 != IntPtr.Zero)
-            {
-                IntPtr hd03 = FindWindowEx(hd01, IntPtr.Zero, "RichEdit50W", "");
-
-                SendMessage(hd03, 0x000c, 0, msg);
-
-                Thread.Sleep(100);
-
-                PostMessage(hd03, 0x0100, 0xD, 0x1C001);
-
-            }
-
-        }
+        // 주문 받은 사람 이름
         private void FileCheck()
         {
             if (filecheck == 1)
@@ -251,5 +254,6 @@ namespace TaderProject
                 
             }
         }
+        #endregion
     }
 }

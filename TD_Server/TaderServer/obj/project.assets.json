@@ -43,11 +43,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\01_song_end_project\\TaderServer\\TaderServer\\TaderServer.csproj",
+      "projectUniqueName": "F:\\project\\Csharp_Android_TaderProject\\TD_Server\\TaderServer\\TaderServer.csproj",
       "projectName": "TaderServer",
-      "projectPath": "F:\\01_song_end_project\\TaderServer\\TaderServer\\TaderServer.csproj",
+      "projectPath": "F:\\project\\Csharp_Android_TaderProject\\TD_Server\\TaderServer\\TaderServer.csproj",
       "packagesPath": "C:\\Users\\LG\\.nuget\\packages\\",
-      "outputPath": "F:\\01_song_end_project\\TaderServer\\TaderServer\\obj\\",
+      "outputPath": "F:\\project\\Csharp_Android_TaderProject\\TD_Server\\TaderServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

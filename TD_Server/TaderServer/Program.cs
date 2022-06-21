@@ -35,6 +35,7 @@ namespace TaderServer
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>().UseUrls(new[] { "http://" + IP + ":5656" });
+                    
                 });
     }
 }

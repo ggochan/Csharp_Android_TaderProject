@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kJFFOaWF9EtirTUlOM/whE5fZ6Sw3SR97q97e0Lv9DGvsRk/yVVozHpAVsCi+zOojVFwFY6VGgpzMx9vHd5Uwg==",
+  "dgSpecHash": "myMM/ygF4nDyAvPvU3fNFmStLDD+839q3J3pit0IoOSvNkX3MO9CGLM8a5XEMtssVjNX9en7x/YG1tv4RjRuaw==",
   "success": true,
-  "projectFilePath": "F:\\01_song_end_project\\TaderServer\\TaderServer\\TaderServer.csproj",
+  "projectFilePath": "F:\\project\\Csharp_Android_TaderProject\\TD_Server\\TaderServer\\TaderServer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LG\\.nuget\\packages\\oracle.manageddataaccess.core\\2.19.91\\oracle.manageddataaccess.core.2.19.91.nupkg.sha512"
   ],
